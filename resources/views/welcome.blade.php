@@ -38,7 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Nama : Hasyim Asyari</div>
+                <div class="title">Nim : 1515015030</div>
             </div>
         </div>
     </body>
