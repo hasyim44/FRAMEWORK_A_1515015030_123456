@@ -77,7 +77,7 @@
 	</div>
 	<nav class="navbar navbar-default navbar-fixed-bottom">
 		<footer class="container">
-			created by <a href=""><span><i class="fa fa-twitter" style="color:#1daf12"></i>Hasyim Asyari</span></a>
+			created by <a href="https://www.facebook.com/hasyim.kimjurykhai"><span><i class="fa fa-facebook" style="color:#1daf12"></i>Hasyim Asyari</span></a>
 		</footer>
 	</nav>
 	<script type="text/javascript" src="{{asset('component/jquery/dist/jquery.min.js')}}"></script>

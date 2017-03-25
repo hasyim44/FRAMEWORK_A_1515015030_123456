@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\matakuliah;
+use App\Matakuliah;
 
 class MatakuliahController extends Controller
 {
