@@ -4,12 +4,12 @@
 
 <div class="panel panel-info">
 <div class="panel-heading">
-	<strong><a href="{{ url('pengguna') }}">
+	<strong><a href="{{ url('dosen_matakuliah') }}">
 	<i style="color:white;" class="fa text-default fa-chevron-left"></i></a>
-	Perbarui Data Pengguna</strong>
+	Perbarui Data Dosen Matakuliah</strong>
 	</div>
-		{!! Form::model(['pengguna',['url'=>'pengguna/edit/'.$pengguna->id,'class'=>'form-horizontal']) !!}
-		@include('pengguna.form')
+		{!! Form::model($dosen_matakuliah,['url'=>'dosen_matakuliah/edit/'.$dosen_matakuliah->id,'class'=>'form-horizontal']) !!}
+		@include('dosen_matakuliah.form')
 		<div style="width: 100%;text-align: right;">
 				<button class="btn btn-info"><i class="fa fa-save"></i>Perbarui</button>
 				<button type"reset"class="btn btn-danger"><i class="fa fa-undo"></i>Ulangi</button>

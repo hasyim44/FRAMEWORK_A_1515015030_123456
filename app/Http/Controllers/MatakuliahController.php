@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Matakuliah;
 
+use App\Pengguna;
+
 class MatakuliahController extends Controller
 {
      public function awal ()

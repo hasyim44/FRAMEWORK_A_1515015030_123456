@@ -6,9 +6,9 @@
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label" id="nama">Nip</label>
+	<label class="col-sm-2 control-label" id="nama">Nim</label>
 	<div class="col-sm-10">
-		{!! Form::text('nip',null,['class'=>'form-control','id'=>'nip','placeholder'=>"Nip"]) !!}
+		{!! Form::text('nim',null,['class'=>'form-control','id'=>'nim','placeholder'=>"Nim"]) !!}
 		</div>
 </div>
 
