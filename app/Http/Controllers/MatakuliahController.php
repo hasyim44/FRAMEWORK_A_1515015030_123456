@@ -8,7 +8,7 @@ use App\Http\Requests;
 
 use App\Matakuliah;
 
-use App\Pengguna;
+use App\Http\Requests\MatakuliahRequest;
 
 class MatakuliahController extends Controller
 {
@@ -22,7 +22,7 @@ class MatakuliahController extends Controller
        // return $this->simpan();
       return view('matakuliah.tambah');
    }
-   public function simpan(Request $input)
+   public function simpan(MatakuliahRequest $input)
    {
     $matakuliah = new Matakuliah();
     $matakuliah->tittle = $input->tittle;
@@ -40,7 +40,7 @@ class MatakuliahController extends Controller
     $matakuliah = Matakuliah::find($id);
       return view('matakuliah.lihat')->with(array('matakuliah'=>$matakuliah));
     }
-   public function update($id,Request $input)
+   public function update($id,MatakuliahRequest $input)
    {
     $matakuliah = Matakuliah::find($id);
     $matakuliah->tittle = $input->tittle;

@@ -10,6 +10,8 @@ use App\Mahasiswa;
 
 use App\Pengguna;
 
+use App\Http\Requests\MahasiswaRequest;
+
 class MahasiswaController extends Controller
 {
     protected $informasi='Gagal aksi';
@@ -26,7 +28,7 @@ class MahasiswaController extends Controller
        // return $this->simpan();
       return view('mahasiswa.tambah');
    }
-   public function simpan(Request $input)
+   public function simpan(MahasiswaRequest $input)
    {
     $pengguna = new Pengguna($input->only('username','password'));
     if($pengguna->save()){
@@ -48,7 +50,7 @@ class MahasiswaController extends Controller
     $mahasiswa = Mahasiswa::find($id);
       return view('mahasiswa.lihat')->with(array('mahasiswa'=>$mahasiswa));
     }
-   public function update($id,Request $input)
+   public function update($id,MahasiswaRequest $input)
    {
     $mahasiswa = Mahasiswa::find($id);
     $pengguna = $mahasiswa->pengguna;

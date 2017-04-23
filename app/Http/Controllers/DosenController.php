@@ -12,6 +12,8 @@ use App\Pengguna;
 
 use Input;
 
+use App\Http\Requests\DosenRequest;
+
 class DosenController extends Controller
 {
     protected $informasi='Gagal aksi';
@@ -26,8 +28,9 @@ class DosenController extends Controller
    	   // return $this->simpan();
       return view('dosen.tambah');
    }
-   public function simpan(Request $input)
+   public function simpan(DosenRequest $input)
    {
+
     $pengguna = new Pengguna($input->only('username','password'));
     if($pengguna->save()){
         $dosen = new Dosen();
@@ -55,7 +58,7 @@ class DosenController extends Controller
     $dosen = Dosen::find($id);
       return view('dosen.lihat')->with(array('dosen'=>$dosen));
     }
-   public function update($id,Request $input)
+   public function update($id,DosenRequest $input)
    {
     $dosen = Dosen::find($id);
     $pengguna = $dosen->pengguna;

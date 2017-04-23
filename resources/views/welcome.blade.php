@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Laravel 5</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -30,14 +30,24 @@
                 display: inline-block;
             }
 
+            .tittle {
+                font-size: 125px;
+                font-style: bold;
+            }
             .title {
                 font-size: 96px;
+            }
+            .baru {
+                font-size: 80px;
+                
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
+                <div class="tittle">SELAMAT DATANG</div>
+                <div class="baru">Tugas Yang Dikerjakan Untuk Memenuhi Postes Selama Praktikum</div>
                 <div class="title">Nama : Hasyim Asyari</div>
                 <div class="title">Nim : 1515015030</div>
             </div>

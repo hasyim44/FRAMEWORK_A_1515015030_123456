@@ -33,11 +33,15 @@
             .title {
                 font-size: 96px;
             }
+            .tittle {
+                font-size: 135px;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
+                <div class="tittle">SELAMAT DATANG</div>
                 <div class="title">Nama : Hasyim Asyari</div>
                 <div class="title">Nim : 1515015030</div>
             </div>

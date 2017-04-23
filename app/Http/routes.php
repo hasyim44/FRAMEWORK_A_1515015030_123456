@@ -1,30 +1,10 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-
-Route::get('/', function () {
-    return view('master');
- });
-
-// Route::get('/nama', function () {
-//     return view('nama');
-//  });
-
-// Route::get('pengguna/{pengguna}',function($pengguna)
-//  {
-//   return "Hello Word dari pengguna $pengguna";
-//  });
-
+Route::get('/login','SesiController@form');
+Route::post('/login','SesiController@validasi');
+Route::get('/logout','SesiController@logout');
+Route::get('/','SesiController@index');
+Route::group(['middleware'=>'AutentifikasiUser'],function()
+{
 Route::get('pengguna','PenggunaController@awal');
 Route::get('pengguna/tambah','PenggunaController@tambah');
 Route::post('pengguna/simpan','PenggunaController@simpan');
@@ -85,3 +65,82 @@ Route::get('jadwal_matakuliah/edit/{jadwal_matakuliah}','Jadwal_MatakuliahContro
 Route::post('jadwal_matakuliah/edit/{jadwal_matakuliah}','Jadwal_MatakuliahController@update');
 Route::get('jadwal_matakuliah/hapus/{jadwal_matakuliah}','Jadwal_MatakuliahController@hapus');
 Route::get('jadwal_matakuliah/lihat/{jadwal_matakuliah}','Jadwal_MatakuliahController@lihat');
+
+	});
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+
+Route::get('/', function () {
+    return view('master');
+ });
+
+
+Route::get('/nama', function () {
+    return view('nama');
+ });
+
+// Route::get('pengguna/{pengguna}',function($pengguna)
+//  {
+//   return "Hello Word dari pengguna $pengguna";
+//  });
+
+
+
+Route::get('ujiHas','RelationshipRebornController@ujiHas');
+
+Route::get('ujiDoesntHave','RelationshipRebornController@ujiHas');
+
+Route::get('whereHas',function()
+{
+	return \App\Dosen_Matakuliah::whereHas('dosen',function($query)
+	{
+		$query->where('nama','like','%s%');
+
+	})->with('dosen')->groupBy('dosen_id')->get();
+});
+
+// Route::get('/',function()
+// {
+// 	return \App\Dosen_Matakuliah::whereHas('dosen',function($query)
+// 	{
+// 		$query->where('nama','like','%s%');
+	
+// 	})
+
+// 	->orWhereHas('matakuliah',function($query)
+// 	{
+// 		$query->where('tittle','like','%a%');
+	
+// 	})
+// 	->with('dosen','matakuliah')
+// 	->groupBy('dosen_id')
+// 	->get();
+// });
+
+// Route::get('/',function (Illuminate\Http\Request $request)
+// {
+// 	echo "INI adalah request dari method get ". $request->nama;
+// });
+
+// use Illuminate\Http\Request;
+// Route::get('/',function()
+// {
+// 	echo Form::open(['url'=>'/']).
+// 		 Form::label('nama').
+// 		 Form::text('nama',null).
+// 		 Form::submit('kirim').
+// 		 Form::close();
+// });
+// Route::post('/',function (Request $request)
+// 	{
+// 		echo "Hasil  dari form input nama yang tadi : ". $request->nama;
+// 	});

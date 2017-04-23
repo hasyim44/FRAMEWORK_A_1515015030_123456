@@ -63,6 +63,7 @@
 							<li><a href="{{url('matakuliah')}}">Matakuliah</a></li>
 						</ul>
 					</li>
+					<li><a href="{{url('logout')}}">Logout</a></li>
 				</ul>
 				
 			</div><!--/.nav-collapse -->
@@ -75,11 +76,20 @@
 			<strong>Informasi: </strong>{{Session::get('informasi')}}
 		</div>
 		@endif	
+		@if (count($errors)>0)
+		<div class="alert alert-danger">
+			<ul>
+				@foreach ($errors->all() as $errors)
+				<li>{{$errors}}</li>
+				@endforeach
+			</ul>
+		</div>
+		@endif
 		@yield('container')
 	</div>
 	<nav class="navbar navbar-default navbar-fixed-bottom">
 		<footer class="container">
-			created by <a href="https://www.facebook.com/hasyim.kimjurykhai"><span><i class="fa fa-facebook" style="color:#1daf12"></i>Hasyim Asyari</span></a>
+			created by <a href="https://www.facebook.com/hasyim.kimjurykhai"><span><i class="fa fa-facebook" style="color:#1daf12"> </i>Hasyim Asyari</span></a>
 		</footer>
 	</nav>
 	<script type="text/javascript" src="{{asset('component/jquery/dist/jquery.min.js')}}"></script>

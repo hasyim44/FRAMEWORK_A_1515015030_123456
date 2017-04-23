@@ -10,6 +10,8 @@ use App\Dosen_Matakuliah;
 
 use App\Dosen;
 use App\Matakuliah;
+use App\Http\Requests\Dosen_MatakuliahRequest;
+
 
 class Dosen_MatakuliahController extends Controller
 { 
@@ -29,7 +31,7 @@ class Dosen_MatakuliahController extends Controller
         $dosen_matakuliah = new Dosen_Matakuliah;
        return view('dosen_matakuliah.tambah', compact('matakuliah','dosen','dosen_matakuliah'));
    }
-   public function simpan(Request $input)
+   public function simpan(Dosen_MatakuliahRequest $input)
    {
    	// $dosen_matakuliah = new Dosen_Matakuliah();
    	// $dosen_matakuliah->dosen_id = '1';
@@ -52,7 +54,7 @@ class Dosen_MatakuliahController extends Controller
         $dosen_matakuliah = Dosen_Matakuliah::find($id);
        return view('dosen_matakuliah.lihat',compact('dosen_matakuliah'));
     }
-    public function update($id,Request $input)
+    public function update($id,Dosen_MatakuliahRequest $input)
     {
         $dosen_matakuliah = Dosen_Matakuliah::find($id);
         $dosen_matakuliah->fill($input->only('dosen_id','matakuliah_id'));
